@@ -1,0 +1,50 @@
+*** AULA01
+O Spring MVC é um framework Java que ajuda no desenvolvimento de aplicações Web. 
+Ele, como a grande maioria dos frameworks modernos, usa o padrão MVC.
+
+Spring é uma servlet e precisa estar declarado no web.xml
+
+	<!-- Declaracao do servlet do Spring MVC abaixo-->
+	<servlet>
+		<servlet-name>spring mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring-context.xml</param-value>
+		</init-param>
+	</servlet>
+
+Podemos verifica a inclusão de um arquivo de configuracao
+
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring-context.xml</param-value>
+		</init-param>
+
+No Spring-context.xml é configurado o package base do springMVC que contem os modelos, controllers e daos
+<context:component-scan base-package="br.com.caelum.contas" />
+
+Indicado que as configurações serão feitas atraves de anotações
+<mvc:annotation-driven />
+
+No bean de viwer resolver é informado o prefixo onde são encontradas as urls e o sufixo da página web
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+Nosso banco está criado. Você, mais para frente, pode trocar esse banco por um MySQL. Tudo que vai ter que 
+fazer é mudar a string de conexão que está na classe ConnectionFactory, que se encontra no pacote br.com.caelum.contas!
+
+Mapeando uma url
+
+Na classe controller criar um método e adicionar o reqyestMapping, o retorna string é p nome da pagina que o spring exibirá 
+ao acessar a URL (método). No exemplo abaixo ao acessar o browser em http://localhost:8080/contas/olaMundo ocorrerá redirecionamento para olaMundo.jsp
+e o método será executado.
+	
+   @RequestMapping("/olaMundo")
+	public String olaMundo() {
+		System.out.println("Olá springMVC spring4");
+		return "olaMundo";
+	}
