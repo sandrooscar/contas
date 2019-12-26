@@ -39,7 +39,7 @@ fazer é mudar a string de conexão que está na classe ConnectionFactory, que se e
 
 Mapeando uma url
 
-Na classe controller criar um método e adicionar o reqyestMapping, o retorna string é p nome da pagina que o spring exibirá 
+Na classe controller criar um método e adicionar o requestMapping, o retorna string é p nome da pagina que o spring exibirá 
 ao acessar a URL (método). No exemplo abaixo ao acessar o browser em http://localhost:8080/contas/olaMundo ocorrerá redirecionamento para olaMundo.jsp
 e o método será executado.
 	
@@ -48,3 +48,24 @@ e o método será executado.
 		System.out.println("Olá springMVC spring4");
 		return "olaMundo";
 	}
+	
+*** AULA03 - O PADRÂO MVC
+Controller => recebe a requisição do usuário de checa quais regras deve executar
+Model => possui as regras de negócio, que podem acessar inclusive o banco de dados, apos executar o  fluxo volta para o controller
+View => parte que é retornada para o usuário
+
+- MODELO: Todo sistema possui regras de negócios, que podem ser simples ou complexas. Todas elas devem estar separadas em classes que tem essa regras como única responsabilidade. Ou seja, toda e qualquer ação de regra de negócio deve ser realizada por exclusivamente esse conjunto de classes.
+
+- VIEW: Interfaces de usuário também devem ser isoladas. Códigos de interface tendem a ser grandes e a sofrerem mudanças constantes. Por esse motivo, toda parte responsável pela exibição das informações para o usuário devem estar isoladas em outro ponto do sistema.
+
+- CONTROLLER: Para conectar as ações que o usuário realiza na interface e fazer com que essas ações resultem em execuções de regra de negócio, é necessário que uma outra camada faça essa tarefa. Ou seja, essa camada recebe informações da camada de visualização e as transforma em invocações de regras de negócio.
+
+O SpringMVC trabalha na camada de Controller, ele é quem controla as entradas e dispara as requisições internas para os controllers (classes com @Controller) e suas views.
+
+* Quando uma requisição chega ao servidor, qual a ordem de execução comum?
+
+Quando uma requisição chega, ela é prontamente atendida pelo Spring MVC. O framework então decide qual action chamar. A action executa, e ao final, diz ao framework qual JSP exibir. O Spring MVC por fim, pega a JSP, a processa, e envia para o usuário final, finalizando a requisição.
+
+* É o modelo (ou domínio) que encapsula as regras de negócios do sistema. Classes como Conta, Usuario, e etc são classes do modelo, por exemplo. É lá que as regras de negócio devem existir.
+
+Lembre-se de nunca colocar regras de negócio nos Controllers! Seu código vai ficar muito complicado!
