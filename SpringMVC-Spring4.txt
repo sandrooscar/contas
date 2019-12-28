@@ -49,7 +49,7 @@ e o método será executado.
 		return "olaMundo";
 	}
 	
-*** AULA03 - O PADRÂO MVC
+*** AULA02 - O PADRÃO MVC
 Controller => recebe a requisição do usuário de checa quais regras deve executar
 Model => possui as regras de negócio, que podem acessar inclusive o banco de dados, apos executar o  fluxo volta para o controller
 View => parte que é retornada para o usuário
