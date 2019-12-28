@@ -17,4 +17,15 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- Código que ensina o springMVC a converter uma String para enumerado, está na 
+	documentação do spring e infelizmente não vem junto com o framework-->
+	
+	<bean id="conversionService"
+		class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="br.com.caelum.contas.StringToEnumConverterFactory"/>
+			</list>
+		</property>
+	</bean>
 </beans>
