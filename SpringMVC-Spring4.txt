@@ -109,3 +109,9 @@ Flash scope serve para quando fazemos um redirecionamento qualquer, e queremos q
 
 O escopo de flash é menor do que o escopo de Sessão (que discutiremos mais pra frente). Uma variável na flash vive somente durante 1 ou mais requisições que acontecem em sequência, devido a redirecionamentos.
 
+*** AULA06 - Validação de dados
+A partir do java 6 a sun criou o bean validation, funciona com anotações
+
+Exibir erros no formulario, necessário adicionar a tag
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
