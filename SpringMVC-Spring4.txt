@@ -93,3 +93,6 @@ apresenta a listagem de contas após a remoção mas no entanto, no browser, a barr
 
 
 Com redirect o servidor solicita para o navegador fazer uma nova requisição para o endereço informado.
+Requisição vaia para o servidor, o servidor solicita redirecionamento para a pagina de retorno (gera 302)
+O navegador retonar para a pagina de redirecionamento informada pelo servidor
+
