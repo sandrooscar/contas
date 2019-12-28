@@ -64,6 +64,6 @@ public class ContaController {
 	public String removeConta(Conta conta) {
 		ContaDAO contaDAO = new ContaDAO();
 		contaDAO.remove(conta);
-		return "forward:listaContas";
+		return "redirect:listaContas";
 	}
 }
