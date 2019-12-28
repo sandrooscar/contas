@@ -85,3 +85,11 @@ A JSP acessa a lista de contas através do nome todasContas.
  
 Link documentação JSTL
 https://docs.oracle.com/javaee/5/tutorial/doc/bnakc.html
+
+*** AULA05 - Redirecionando requisições
+Com o FORWARD o próprio servidor faz o redirecionamento, o redirecionamento acontece no lado do servidor, o browser não percebe, 
+mas a url fica com o link anterior ao forward, entao se der refresh apresentando a listagem de contas com de removeContas, o remove contas será chamado novamente, ou seja,
+apresenta a listagem de contas após a remoção mas no entanto, no browser, a barra de endereços continua com o link de removerContas.
+
+
+Com redirect o servidor solicita para o navegador fazer uma nova requisição para o endereço informado.
