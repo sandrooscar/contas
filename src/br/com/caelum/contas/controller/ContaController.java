@@ -59,4 +59,11 @@ public class ContaController {
 	  mv.addAttribute("todasContas", contas);
 	  return "conta/listaConta";
 	}
+	
+	@RequestMapping("/removeConta")
+	public String removeConta(Conta conta) {
+		ContaDAO contaDAO = new ContaDAO();
+		contaDAO.remove(conta);
+		return "conta/delecaoOK";
+	}
 }
