@@ -2,17 +2,18 @@ package br.com.caelum.contas.modelo;
 
 import java.util.Calendar;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.sun.istack.internal.NotNull;
 
 public class Conta {
 	
 	private Long id;
 
-	@NotNull @Size(min=5, message="A descrição deve ter no mínimo 5 caracteres")
+	@NotNull(message="{conta.formulario.descricao.obrigatoria}") 
+	@Size(min=3, message="{conta.formulario.descricao.tamanho}")
 	private String descricao;
 
 	private boolean paga;

@@ -115,3 +115,26 @@ A partir do java 6 a sun criou o bean validation, funciona com anotações
 Exibir erros no formulario, necessário adicionar a tag
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+Para fazer  internazionalização é necessário criar o arquivo ValidationMessages.properties na pastar src, o nome deve ser esse, 
+pois está na especificação
+
+https://blog.caelum.com.br/java-ee-6-comecando-com-bean-validation/
+
+A validação no cliente é interessante, pois é bastante amigável ao usuário.
+
+Porém a validação no servidor é importantíssima. É ela que vai garantir que nenhum dado sujo seja salvo no banco de dados. 
+Sabemos que o usuário pode facilmente desativar o Javascript do browser, ou mesmo fazer uma requisição para o seu servidor 
+na mão. Ou seja, validação server-side é obrigatória!
+
+Devo sempre usar Bean Validation? Não posso fazer nada na mão?
+
+O que você acha?
+
+RESPONDA
+Opinião do instrutor
+
+Não há resposta certa para essa pergunta. Se você perceber que a validação manual será mais simples, faça também. Não há problemas 
+em misturar, contanto que isso fique claro e fácil de ser percebido por qualquer um que vá manter sua aplicação no futuro.
+
+
+
