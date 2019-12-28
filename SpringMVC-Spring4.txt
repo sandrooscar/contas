@@ -69,3 +69,10 @@ Quando uma requisição chega, ela é prontamente atendida pelo Spring MVC. O frame
 * É o modelo (ou domínio) que encapsula as regras de negócios do sistema. Classes como Conta, Usuario, e etc são classes do modelo, por exemplo. É lá que as regras de negócio devem existir.
 
 Lembre-se de nunca colocar regras de negócio nos Controllers! Seu código vai ficar muito complicado!
+
+*** AULA03 - Recebendo dados da requisição
+Um padrão que temos é de criar sub-diretórios para cada controlador. Então, todas as JSPs que são chamadas pelo ContaController, devem ficar dentro de views/conta.
+A convenção também na maioria dos frameworks modernos. Isso ajuda e muito. No passado, nós éramos obrigados a popular na mão. Ou seja, para cada atributo da classe, gastávamos 1 ou mais linhas de código para guardar o valor que veio na requisição em um objeto de domínio. 
+Imagine o trabalho quando o dado era um número ou uma data; precisávamos ficar convertendo!
+
+Toda essa tarefa repetitiva agora é responsabilidade do Spring!

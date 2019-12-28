@@ -27,6 +27,6 @@ public class ContaController {
 		ContaDAO contaDAO = new ContaDAO();
 		contaDAO.adiciona(conta);
 		
-		return "contaAdicionada";
+		return "conta/contaAdicionada";
 	}
 }
