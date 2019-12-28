@@ -76,3 +76,12 @@ A convenção também na maioria dos frameworks modernos. Isso ajuda e muito. No pa
 Imagine o trabalho quando o dado era um número ou uma data; precisávamos ficar convertendo!
 
 Toda essa tarefa repetitiva agora é responsabilidade do Spring!
+
+*** AULA04 - Enviando dados para a JSP
+Utilização de Model e ModelAndView
+No ModelAndView adiciono a JSP de retorno e o atributo com valor que será acessada por essa JSP.
+O ModelAndView é utilizado quando precisamos enviar valores para a JSP.
+A JSP acessa a lista de contas através do nome todasContas.
+ 
+Link documentação JSTL
+https://docs.oracle.com/javaee/5/tutorial/doc/bnakc.html
