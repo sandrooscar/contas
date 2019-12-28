@@ -36,6 +36,8 @@
 			<td><fmt:formatDate value="${conta.dataPagamento.time}" pattern="dd/MM/yyyy"/></td>
 			<td>
 				<a href="removeConta?id=${conta.id}">Excluir</a>
+				<br/>
+				<a href="mostraConta?id=${conta.id}">Alterar</a>
 			</td>
 		</tr>
 	</c:forEach>

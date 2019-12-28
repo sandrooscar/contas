@@ -96,3 +96,16 @@ Com redirect o servidor solicita para o navegador fazer uma nova requisição para
 Requisição vaia para o servidor, o servidor solicita redirecionamento para a pagina de retorno (gera 302)
 O navegador retonar para a pagina de redirecionamento informada pelo servidor
 
+* Informando o springMVC como mconverter data
+Para o Spring MVC saber converter automaticamente a data no formato brasileiro para um Calendar é preciso usar a anotação @DateTimeFormat. Abra a classe Conta e adicione a anotação acima do atributo dataPagamento:
+
+@DateTimeFormat(pattern="dd/MM/yyyy")
+private Calendar dataPagamento
+
+Flash escope
+https://vard-lokkur.blogspot.com/2012/02/spring-mvc-flash-attributes.html
+
+Flash scope serve para quando fazemos um redirecionamento qualquer, e queremos que uma variável seja "transportada" de uma action para outra.
+
+O escopo de flash é menor do que o escopo de Sessão (que discutiremos mais pra frente). Uma variável na flash vive somente durante 1 ou mais requisições que acontecem em sequência, devido a redirecionamentos.
+
