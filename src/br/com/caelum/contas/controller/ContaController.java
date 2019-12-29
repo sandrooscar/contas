@@ -2,6 +2,7 @@ package br.com.caelum.contas.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -88,10 +89,16 @@ public class ContaController {
 	  return "redirect:listaContas";
 	}	
 	
+	/**
+	 * Informo com codigo 200 que deu certo, sem precisar devolver todo o hatml processado da lista contas
+	 * Requisição via AJAX
+	 * @param conta
+	 * @param response
+	 */
 	@RequestMapping("/pagaConta")
-	public String pagaConta(Conta conta) {
+	public void pagaConta(Conta conta, HttpServletResponse response) {
 		ContaDAO contaDAO = new ContaDAO();
 		contaDAO.paga(conta.getId());
-		return "redirect:listaContas";
+		response.setStatus(200);
 	}
 }
