@@ -148,8 +148,17 @@ e NÃO para uma aciotn spring
 
 *** AULA07 - Usando AJAX - jquery get post
  
+*** AULA08 - Autenticacao de usuarios
 
-	
+Interceptor é executado antes de qualquer action no spring
+Deve extender HandlerInterceptorAdapter, são executados antes ou depois de uma action
+Ex:
+AutorizadorInterceptor extends HandlerInterceptorAdapter	
+
+Necessário configurar no spring-context.xml
+	<mvc:interceptors>
+		<bean class="br.com.caelum.contas.interceptor.AutorizadorInterceptor"/>
+	</mvc:interceptors>
 
 
 
