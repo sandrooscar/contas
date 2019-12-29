@@ -35,12 +35,26 @@
 			</td>
 			<td><fmt:formatDate value="${conta.dataPagamento.time}" pattern="dd/MM/yyyy"/></td>
 			<td>
-				<a href="removeConta?id=${conta.id}">Excluir</a> ||
-				<a href="mostraConta?id=${conta.id}">Alterar</a> ||
-				<a href="pagaConta?id=${conta.id}">Pagar</a>
+				<a href="removeConta?id=${conta.id}">Excluir</a> 
+				||<a href="mostraConta?id=${conta.id}">Alterar</a> 
+				
+				<c:if test="${conta.paga eq false}">
+				||<a href="#" onclick="pagaAgora(${conta.id});">Pagar</a>
+				</c:if>
 			</td>
 		</tr>
 	</c:forEach>
 </table>
 </body>
+<script src="resources/js/jquery.js"> </script>
+<script type="text/javascript">
+	function deuCerto(DadosDaResposta){
+		alert("Conta paga com sucesso!");	
+	}
+	
+	function pagaAgora(id){
+		//requisicao que para pagar a conta e executa a callback
+		$.get("pagaConta?id="+id, deuCerto);
+	}
+</script>
 </html>

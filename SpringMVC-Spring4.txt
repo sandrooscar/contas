@@ -137,5 +137,16 @@ em misturar, contanto que isso fique claro e fácil de ser percebido por qualquer
 
 
 *** AULA07 - Usando AJAX
+Ao importar
+<script src="resources/js/jquery.js"> </script>
+
+A requisição cai no spring, mas queremos que ela seja devolvida para o browser
+É necessário adicionar no spring-context
+	<mvc:default-servlet-handler/>
+Esta configuração sabe que toda vez que tivermos uma requisição começando com resources/ será para um recurso(imagem, arquivo etc)
+e NÃO para uma aciotn spring
+
+	
+
 
 

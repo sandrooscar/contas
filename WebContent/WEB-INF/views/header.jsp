@@ -1,5 +1,5 @@
 <!-- 
-Todo arquivo de visualização do springMVC tem que ficar nesna pasta views, conforme configuração no spring-context
+Todo arquivo de visualização do springMVC tem que ficar mesna pasta views, conforme configuração no spring-context
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
