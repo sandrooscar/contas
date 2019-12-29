@@ -159,6 +159,38 @@ Necessário configurar no spring-context.xml
 	<mvc:interceptors>
 		<bean class="br.com.caelum.contas.interceptor.AutorizadorInterceptor"/>
 	</mvc:interceptors>
+	
+*** AULA09 - Injeção de dependencias
 
+Spring é um container de injeção de depêndencia
+@Repository tem a semântica de dizer que sou um repositorio mas no fundo é igual @Component
+
+O padrão de projetos Dependency Injection (DI) (Injeção de dependências), procura resolver esses problemas. A ideia é que a classe não mais resolve as suas 
+dependências por conta própria, mas apenas declara que depende de alguma outra classe. E de alguma outra forma que não sabemos ainda, alguém resolverá 
+essa dependência para nós. Alguém pega o controle dos objetos que liga (ou amarra) as dependências. Não estamos mais no controle, há algum container que gerencia as dependências e amarra tudo. Esse container já existia e já usamos ele sem saber.
+
+Repare que com @Controller já definimos que a nossa classe faz parte do Spring MVC, mas a anotação vai além disso. Também definimos que queremos que o Spring controle o objeto. Spring é no fundo um container que dá new para nós e também sabe resolver e ligar as dependências. Por isso, o Spring também é chamado Container IoC (Inversion of Control) ou Container DI.
+
+Essas são as principais funcionalidades de qualquer container de inversão de controle/injeção de dependência. O Spring é um dos vários outros containers disponíveis no mundo Java.
+
+Injeção de dependência é o nome que damos para quando temos uma classe (por exemplo, nossa ContaDAO), que depende de outra classe (por exemplo, Connection), e um mecanismo qualquer consegue descobrir e instanciar todas as dependências, e por fim, nos entregar a classe que queremos.
+
+Ao deixar claro a dependência pelo construtor, conseguimos facilmente trocá-la no futuro. Além disso, nosso código fica mais fácil de ser testado (veja isso no nosso curso de testes automatizados).
+
+Frameworks de injeção de dependência são bem comuns no mundo Java. O Spring você já conhece. Pesquisa também pelo Guice, feito pelo Google.
+
+* Sobre Repository
+
+Pode ser um banco de dados ou uma lista em memória. À anotação @Component é mais para classes utilitárias. Um exemplo bem comum seria anotar uma classe que represente um Helper ou algum Wrapper.
+
+A annotation @Repository é uma especialização da annotation @Component. Qualquer dependência a ser injetada pelo Container é uma @Component no fundo.
+
+A diferença é que a @Repository foi concebida para possuir comportamentos específicos para a camada de modelo. No momento ela possui um tratamento de Exception Translation (Tradução de Exceção) que retorna uma exceção "desencapsulada", expondo a exceção real e não somente IllegalArgumentException, IllegalStateException, etc.
+
+Seguem os links da documentação:
+
+http://docs.spring.io/spring/docs/4.3.0.RC2/spring-framework-reference/htmlsingle/#beans-stereotype-annotations
+
+http://docs.spring.io/spring/docs/4.3.0.RC2/spring-framework-reference/htmlsingle/#orm-exception-translation
 
 
