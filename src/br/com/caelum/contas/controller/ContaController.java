@@ -87,4 +87,11 @@ public class ContaController {
 	  dao.altera(conta);
 	  return "redirect:listaContas";
 	}	
+	
+	@RequestMapping("/pagaConta")
+	public String pagaConta(Conta conta) {
+		ContaDAO contaDAO = new ContaDAO();
+		contaDAO.paga(conta.getId());
+		return "redirect:listaContas";
+	}
 }

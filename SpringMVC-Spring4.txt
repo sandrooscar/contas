@@ -130,11 +130,12 @@ Devo sempre usar Bean Validation? Não posso fazer nada na mão?
 
 O que você acha?
 
-RESPONDA
 Opinião do instrutor
 
 Não há resposta certa para essa pergunta. Se você perceber que a validação manual será mais simples, faça também. Não há problemas 
 em misturar, contanto que isso fique claro e fácil de ser percebido por qualquer um que vá manter sua aplicação no futuro.
 
+
+*** AULA07 - Usando AJAX
 
 
