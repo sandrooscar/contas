@@ -1,4 +1,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="../header.jsp"%>
+
 <html>
 <body>
     <h3>Alterar Conta</h3>

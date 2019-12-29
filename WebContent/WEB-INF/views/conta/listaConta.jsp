@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@  taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
 			<td>${conta.descricao}</td>
 			<td>${conta.valor}</td>
 			<td>${conta.tipo}</td>
-			<td>
+			<td id="conta_${conta.id}">
 				<c:if test="${conta.paga eq false}">
 					Não paga
 				</c:if>
@@ -46,15 +47,12 @@
 	</c:forEach>
 </table>
 </body>
-<script src="resources/js/jquery.js"> </script>
 <script type="text/javascript">
-	function deuCerto(DadosDaResposta){
-		alert("Conta paga com sucesso!");	
-	}
-	
 	function pagaAgora(id){
 		//requisicao que para pagar a conta e executa a callback
-		$.get("pagaConta?id="+id, deuCerto);
+		$.post("pagaConta", {'id' : id}, function() {
+			  $("#conta_"+id).html("Paga");
+			});
 	}
 </script>
 </html>

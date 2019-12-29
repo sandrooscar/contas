@@ -146,6 +146,9 @@ A requisição cai no spring, mas queremos que ela seja devolvida para o browser
 Esta configuração sabe que toda vez que tivermos uma requisição começando com resources/ será para um recurso(imagem, arquivo etc)
 e NÃO para uma aciotn spring
 
+*** AULA07 - Usando AJAX - jquery get post
+ 
+
 	
 
 

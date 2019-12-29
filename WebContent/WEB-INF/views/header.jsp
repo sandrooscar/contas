@@ -6,21 +6,9 @@ Todo arquivo de visualização do springMVC tem que ficar mesna pasta views, con
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Adicionar contas</title>
+<script src="resources/js/jquery.js"> </script>
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 </head>
 <body>
-	<h3>Adicionar contas</h3>
-	<form action="adicionaConta" method="post">
-		Descrição:<br />
-		<textarea name="descricao" id="descricao" rows="5" cols="100"></textarea>
-		<br /> 
-		Valor: <input type="text" name="valor" id="valor" /> <br />
-		Tipo: 
-		<select>
-			<option value="ENTRADA">Entrada</option>
-			<option value="SAIDA">Saída</option>
-		</select> <br /> <br /> <input type="submit" value="Adicionar" />
-	</form>
 </body>
 </html>
